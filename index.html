@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Handson Question & Answer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="all">
+        <h1>JS Closure Question And Answer's</h1>
+        <div class="container">
+
+    <!-- Question start from here with answer-->
+            <br>
+            <h2>Q.1 - 
+                <div class="adjust">
+<pre>
+    function counter(){
+    var counter = 0;
+    function IncreaseCounter(){
+        return counter += 1;
+    };
+    return IncreaseCounter;
+    }
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());"
+</pre>  
+                </div>
+            </h2>
+                <span>Ans -</span>
+            <div>    
+                <h3> here is the answer -- The output is on alert 1,2,3 and 4..
+                    <button onclick="firstQuestion()">click To Check Output This Code</button>
+                </h3><br>
+            </div>    
+            <div class="explain">
+                <p><span class="underline">Explain---</span>&nbsp &nbsp
+                    <!--Start explain from here-->
+                    
+                    The code defines a function called "counter" that returns an inner function "IncreaseCounter". This inner function increments a variable counter each time it is called.<br>
+
+                    When the counter function is invoked and assigned to a variable, it creates a closure, preserving the reference to the "counter" variable.<br>
+
+                    Subsequent calls to the variable (which now holds the "IncreaseCounter" function) increment and return the updated value of the "counter" variable.<br>
+
+                    The provided code displays a series of 'alerts', showing the incremented values of the counter: 1, 2, 3, and 4.
+                    
+                    <!--End explain from here-->
+                </p>
+            </div><br><hr><br>
+    <!-- Question End from here with answer-->
+
+    <!-- Question start from here with answer-->
+            <br>
+            <h2>Q.2 - 
+                <div class="adjust">
+<pre>
+    let count = 0;
+(function () {
+  if (count === 0) {
+    let count = 1;
+    console.log(count); 
+  }
+  console.log(count);
+})();
+</pre>  
+                </div>
+            </h2>
+                <span>Ans -</span>
+            <div>    
+                <h3>  The output is 1 And 0. You can check this ouput on CONSOLE...<br>
+                    open console and click the button and check...
+                    <button onclick="secondquestion()">click To Check Output This Code</button>
+                </h3><br>
+            </div>    
+            <div class="explain">
+                <p><span class="underline">Explain---</span>&nbsp &nbsp
+                    <!--Start explain from here-->
+                    
+                    this code snippet declares two variables named 'count'. The outer 'count' variable is assigned a value of "0". Inside an immediately-invoked function, another count variable is declared and assigned a value of "1".
+                    The inner 'count' variable only exists within the function's scope and does not affect the value of the outer 'count' variable. 
+                    The code logs the value of the inner 'count' variable (1) within the if block and then logs the value of the outer 'count' variable (0) outside the if block.
+                    
+                    <!--End explain from here-->
+                </p>
+            </div><br><hr><br>
+    <!-- Question end from here with answer-->
+    
+    <!-- Question start from here with answer-->
+    <br>
+    <h2>Q.3 - 
+        <div class="adjust">
+<pre>
+for (var i = 0; i < 3; i++) {
+    setTimeout(function log() {
+        console.log(i); 
+    }, 1000);
+}
+</pre>  
+        </div>
+    </h2>
+        <span>Ans -</span>
+    <div>    
+        <h3> output is 3, 3 And 3 it take a 1s after that it print. You can check this ouput on CONSOLE...<br>
+            open console and click the button and check...
+            <button onclick="thirdquestion()">click To Check Output This Code</button>
+        </h3><br>
+    </div>    
+    <div class="explain">
+        <p><span class="underline">Explain---</span>&nbsp &nbsp
+            <!--Start explain from here-->
+            
+            This code is a loop that runs three times. Inside the loop, it sets a timeout function for each iteration, which will execute after a "1000ms" (1 second) delay.
+             However, the answer is after 1 sec print 3,3 and 3....
+            
+            <!--End explain from here-->
+        </p>
+    </div><br><hr><br>
+<!-- Question end from here with answer-->
+
+    <!-- Question start from here with answer-->
+    <br>
+    <h2>Q.4 - 
+        <div class="adjust">
+<h4>
+        &nbsp Write a code to calculate area of a rectangle using inner function.
+        In this case outer function should accept parameter length 
+        and inner function should accept parameter breadth.
+</h4>  
+        </div>
+    </h2>
+        <span>Ans -</span>
+    <div>    
+        <h3> 
+<pre class=".preans">
+function Rectangle(length){
+ function Area(breath){
+         return length*breath;
+            }
+            return Area;
+        }
+const lengthArea = Rectangle(11);
+console.log(lengthArea(5));
+
+
+    This output is 55 .. to check open 
+    console & click button...
+        </pre>
+            <button onclick="fourthquestion()">click To Check Output This Code</button>
+        </h3><br>
+    </div>    
+    <div class="explain">
+        <p><span class="underline">Explain---</span>&nbsp &nbsp
+            <!--Start explain from here-->
+            
+            defines a function called 'Rectangle' that takes a parameter length. It returns an inner function 'Area' which calculates and returns the 'area' of a rectangle using the length provided.
+             The variable 'lengthArea' is assigned the returned 'Area' function, and when called with an argument (lengthArea(5)), it calculates the rectangle's area using the length value (11) provided earlier and the new breath value (5).
+             The result (55) is then printed to the console.....
+            
+            <!--End explain from here-->
+        </p>
+    </div><br><hr><br>
+<!-- Question end from here with answer-->
+
+<!-- Question start from here with answer-->
+<br>
+<h2>Q.5 - 
+    <div class="adjust">
+<h4>
+    &nbsp Take a variable in outer function and create an inner function to increase the counter every time it is called....?
+</h4>  
+    </div>
+</h2>
+    <span>Ans -</span>
+<div>    
+    <h3> 
+<pre class=".preans">
+    function createCounter() {
+        let counter = 0;
+    
+        function incrementCounter() {
+            counter++;
+            console.log('Counter value:', counter);
+        }
+        return incrementCounter;
+    }
+    const counter = createCounter();
+    counter(); 
+    counter(); 
+    counter();    
+
+
+This output is counter value 1, 2 And 3 .. to check open 
+console & click button...
+    </pre>
+        <button onclick="fifthquestion()">click To Check Output This Code</button>
+    </h3><br>
+</div>    
+<div class="explain">
+    <p><span class="underline">Explain---</span>&nbsp &nbsp
+        <!--Start explain from here-->
+        
+        When you call "createCounter()", it returns the 'incrementCounter' function. The variable counter holds the reference to this returned function. 
+        When you call "counter()", the counter value is incremented and printed to the console. Each time you call "counter()", 
+        the counter value increases, and it remembers its state between calls thanks to the closure......
+        
+        <!--End explain from here-->
+    </p>
+</div><br><hr><br>
+<!-- Question end from here with answer-->
+            
+        <!-- Question start from here with answer-->
+    <br>
+    <h2>Q.6 - 
+        <div class="adjust">
+<pre>
+    Print Output
+
+    var a = 12;
+    (function () {
+      alert(a);
+    })();
+</pre>  
+        </div>
+    </h2>
+        <span>Ans -</span>
+    <div>    
+        <h3>The output is 12... You can check this ouput on alert...<br>
+            click the button and check...
+            <button onclick="sixthquestion()">click To Check Output This Code</button>
+        </h3><br>
+    </div>    
+    <div class="explain">
+        <p><span class="underline">Explain---</span>&nbsp &nbsp
+            <!--Start explain from here-->
+            
+            Inside the IIFE, there is an "alert(a)" statement. Since the 'IIFE' is executed immediately, it prints the value of variable a, which is 12, using the "alert()" function.
+            Therefore, the output is an "alert" dialog showing the number 12.....
+            
+            <!--End explain from here-->
+        </p>
+    </div><br><hr><br>
+<!-- Question end from here with answer-->
+
+        <!-- Question start from here with answer-->
+    <br>
+    <h2>Q.7 - 
+        <div class="adjust">
+<pre>
+    var a = 10;
+var x = (function () {
+  var a = 12;
+  return function () {
+    alert(a);
+  };
+})();
+x();
+</pre>  
+        </div>
+    </h2>
+        <span>Ans -</span>
+    <div>    
+        <h3>The output is 12... You can check this ouput on alert...<br>
+             click the button and check...
+            <button onclick="seventhquestion()">click To Check Output This Code</button>
+        </h3><br>
+    </div>    
+    <div class="explain">
+        <p><span class="underline">Explain---</span>&nbsp &nbsp
+            <!--Start explain from here-->
+            
+            this code, two variables are declared: 'a' and 'x'. The global variable a is assigned the value '10'. Then, an IIFE is used to assign a function to the variable 'x'. 
+            Inside the IIFE, there is a local variable a with a value of '12', which shadows the global variable a. The IIFE returns an inner function that accesses the local a and displays its value using the "alert()" function.<br>
+
+            When the x function is invoked with x(), it executes the inner function defined inside the IIFE, and the 'alert(a)' statement displays the value of the local variable a, which is 12......
+            
+            <!--End explain from here-->
+        </p>
+    </div><br><hr><br>
+<!-- Question end from here with answer-->
+
+        <!-- Question start from here with answer-->
+    <br>
+    <h2>Q.8 - 
+        <div class="adjust">
+<pre>
+    var globalVar = "xyz";
+
+(function outerFunc(outerArg) {
+    var outerVar = 'a';
+    
+    (function innerFunc(innerArg) {
+    var innerVar = 'b';
+    
+    console.log(
+        "outerArg = " + outerArg + "\n" +
+        "innerArg = " + innerArg + "\n" +
+        "outerVar = " + outerVar + "\n" +
+        "innerVar = " + innerVar + "\n" +
+        "globalVar = " + globalVar);
+    
+    })(456);
+})(123);
+</pre>  
+        </div>
+    </h2>
+        <span>Ans -</span>
+    <div>    
+        <h3>The output is 123, 456 , a , b And xyz... You can check this ouput on Console...<br>
+             just open the console click the button and check...
+            <button onclick="eightquestion()">click To Check Output This Code</button>
+        </h3><br>
+    </div>    
+    <div class="explain">
+        <p><span class="underline">Explain---</span>&nbsp &nbsp
+            <!--Start explain from here--><br>
+           1- The outer IIFE:<br>
+                &nbsp&nbsp Takes an argument outerArg with the value 123.<br>
+                &nbsp&nbsp Defines a local variable outerVar with the value 'a'.<br>
+           2- The inner IIFE:<br>
+           &nbsp&nbsp Takes an argument innerArg with the value 456.<br>
+           &nbsp&nbsp Defines a local variable innerVar with the value 'b'.<br>
+           &nbsp&nbsp Displays the values of outerArg, innerArg, outerVar, innerVar, and a global variable globalVar, which is set to 'xyz'.<br>
+
+            The output displays the values of the arguments and variables from the outer and inner functions as stated above. The code illustrates
+             the concept of function scope and how inner functions have access to variables defined in their outer functions, forming closures.......
+            
+            <!--End explain from here-->
+        </p>
+    </div><br><hr><br>
+<!-- Question end from here with answer-->
+        
+
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

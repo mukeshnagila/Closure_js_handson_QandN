@@ -1,0 +1,97 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: rgb(214, 104, 104);
+    padding: 10px 15px;
+}
+
+.all{
+    background-color: aquamarine;
+    min-width: 800px;
+}
+
+h1{
+    text-align: center;
+    color: blueviolet;
+}
+
+.container{
+    background-color: cornflowerblue;
+    color: snow;
+    padding: 5px 10px;
+    min-height: 90vh;
+    min-width: 500px;
+}
+
+span{
+    color: black;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+h3{
+    color: brown;
+    font-size: 22px;
+    text-align: center;
+}
+
+.preans{
+    color: brown;
+    font-size: 22px;
+    text-align: center;
+}
+
+button{
+    width: 300px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid rgb(76, 237, 237);
+    border-radius: 8px;
+    background-color: green;
+    color: antiquewhite;
+    font-size: 15px;
+    float: right;
+    box-shadow: 2px 3px 5px green;
+}
+
+.explain{
+    padding: 25px 150px;
+}
+
+p{
+    border: 3px solid grey;
+    padding: 5px 10px;
+    background-color: burlywood;
+    color: rgb(81, 81, 81);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.adjust{
+    margin-left: 250px;
+}
+
+@media only screen and (min-width:200px) and (max-width:800px) {
+        
+        pre{
+            text-align: center;
+        }
+
+        .explain{
+            padding: 25px 10px;
+        }
+        
+        .adjust{
+            margin-left: 0px;
+        }
+
+}        
